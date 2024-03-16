@@ -1,22 +1,13 @@
-import express, { Request, Response } from "express";
-import cats from "./data/cats.json";
+import express from "express";
+import { router as CatRouter } from "./routers/cat-router";
+import morgan from "morgan";
+
+const BASE_CAT_URL = "/cats";
+const PORT = 3000;
 
 const app = express();
-const PORT = 3000;
-const BASE_URL = "/cats";
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
-});
-
-app.get(BASE_URL, (req: Request, res: Response) => {
-  res.json(cats);
-});
-
-app.get(BASE_URL + "/:id", (req: Request, res: Response) => {
-  const cat = cats.find((item) => item.id === req.params.id);
-  cat ? res.json(cat) : res.send(404);
-});
+app.use(morgan("tiny"));
+app.use(BASE_CAT_URL, CatRouter);
 
 app.listen(PORT, () => {
   console.log("Listening on port " + PORT);
