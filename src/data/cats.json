@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Missa",
+    "age": 2,
+    "breed": "british"
+  },
+  {
+    "id": "2",
+    "name": "Kessi",
+    "age": 1,
+    "breed": "british"
+  },
+  {
+    "id": "3",
+    "name": "Nastya",
+    "age": 5,
+    "breed": "maine coon"
+  }
+]
