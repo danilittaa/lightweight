@@ -11,15 +11,25 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="display: flex; justify-content: center">
-    <table
-      style="width: 300px; margin-top: 60px"
-      class="table table-primary table-striped"
-    >
+  <body
+    style="
+      display: flex-col;
+      justify-content: center;
+      background-color: rgb(186, 211, 220);
+      padding: 60px 60px 0;
+    "
+  >
+    <h2>
+      The most popular breed:
+      <span style="color: rgb(97, 95, 95)"><%= breed %></span>
+    </h2>
+    <table style="margin-top: 60px" class="table table-striped">
       <thead>
         <tr>
           <th>ID</th>
           <th>Name</th>
+          <th>Age</th>
+          <th>Breed</th>
         </tr>
       </thead>
       <tbody>
@@ -27,6 +37,8 @@
         <tr>
           <td><%= item.id %></td>
           <td><%= item.name %></td>
+          <td><%= item.age %></td>
+          <td><%= item.breed %></td>
         </tr>
         <% }); %>
       </tbody>
